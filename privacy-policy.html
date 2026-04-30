@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité — GasPi-Check</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --dark: #1a1a2e;
+    --green: #4CAF50;
+    --green-light: #e8f5e9;
+    --red-light: #fdecea;
+    --red: #c0392b;
+    --text: #1a1a1a;
+    --text2: #555;
+    --text3: #999;
+    --bg: #f7f7f5;
+    --white: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --mono: 'DM Mono', monospace;
+    --font: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* HEADER */
+  .hero {
+    background: var(--dark);
+    padding: 60px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(76,175,80,0.15) 0%, transparent 70%);
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(76,175,80,0.15);
+    border: 1px solid rgba(76,175,80,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: var(--green);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .hero h1 span { color: var(--green); }
+  .hero p {
+    color: rgba(255,255,255,0.55);
+    font-size: 15px;
+    max-width: 480px;
+    margin: 0 auto 24px;
+    position: relative;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-meta span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    font-family: var(--mono);
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+  .toc-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+  .toc ol {
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 24px;
+  }
+  .toc li { font-size: 14px; }
+  .toc a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  /* SECTIONS */
+  .section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .section-header {
+    background: var(--dark);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-number {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: rgba(76,175,80,0.2);
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: var(--mono);
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .section-body { padding: 24px; }
+
+  /* CONTENT ELEMENTS */
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  h3:first-child { margin-top: 0; }
+
+  p { font-size: 15px; color: var(--text2); margin-bottom: 12px; line-height: 1.75; }
+  p:last-child { margin-bottom: 0; }
+
+  .row-no {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 14px;
+    background: var(--red-light);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #8b1a1a;
+  }
+  .row-no .icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  .row-yes {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 14px;
+    background: var(--green-light);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #1b5e20;
+  }
+  .row-yes .icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  .callout {
+    background: #f8f8f8;
+    border-left: 3px solid var(--green);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  .mono-block {
+    background: #f0f0ef;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text);
+    margin: 12px 0;
+    line-height: 1.8;
+  }
+
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+  .badge.green { background: var(--green-light); color: #1b5e20; }
+  .badge.dark { background: var(--dark); color: #fff; }
+  .badge.red { background: var(--red-light); color: var(--red); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 12px 0;
+  }
+  th {
+    background: #f0f0ef;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text3);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .rights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .right-card {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .right-card .right-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .right-card p {
+    font-size: 13px;
+    margin: 0;
+  }
+
+  /* CONTACT */
+  .contact-box {
+    background: var(--dark);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    margin-top: 32px;
+  }
+  .contact-box h3 {
+    color: #fff;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 17px;
+    margin: 0 0 8px;
+  }
+  .contact-box p {
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .contact-email {
+    display: inline-block;
+    background: rgba(76,175,80,0.15);
+    border: 1px solid rgba(76,175,80,0.3);
+    color: var(--green);
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-family: var(--mono);
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text3);
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+  .footer strong { color: var(--text2); }
+
+  @media (max-width: 600px) {
+    .toc ol { grid-template-columns: 1fr; }
+    .rights-grid { grid-template-columns: 1fr; }
+    .hero-meta { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">
+    <div class="live-dot"></div>
+    Conforme RGPD · EU 2016/679
+  </div>
+  <h1>Politique de <span>confidentialité</span></h1>
+  <p>GasPi-Check est conçu dès sa fondation avec la vie privée comme principe non négociable.</p>
+  <div class="hero-meta">
+    <span>Version 9.5</span>
+    <span>·</span>
+    <span>Entrée en vigueur : 29 avril 2026</span>
+    <span>·</span>
+    <span>Darkden64</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <div class="toc-title">Table des matières</div>
+    <ol>
+      <li><a href="#s1">Responsable de traitement</a></li>
+      <li><a href="#s2">Données jamais collectées</a></li>
+      <li><a href="#s3">Données collectées</a></li>
+      <li><a href="#s4">Anonymisation technique</a></li>
+      <li><a href="#s5">Base légale</a></li>
+      <li><a href="#s6">Finalités du traitement</a></li>
+      <li><a href="#s7">Durée de conservation</a></li>
+      <li><a href="#s8">Transferts hors UE</a></li>
+      <li><a href="#s9">Tes droits</a></li>
+      <li><a href="#s10">Cookies et tracking</a></li>
+      <li><a href="#s11">Sécurité</a></li>
+      <li><a href="#s12">Modifications</a></li>
+    </ol>
+  </div>
+
+  <!-- S1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <div class="section-title">Responsable de traitement</div>
+    </div>
+    <div class="section-body">
+      <p>Le responsable du traitement des données personnelles collectées via l'application GasPi-Check est :</p>
+      <div class="mono-block">
+Nom : Darkden64
+Application : GasPi-Check
+Contact : via le dépôt GitHub associé
+Pays : France — Union Européenne
+      </div>
+      <p>En tant que responsable de traitement, Darkden64 s'engage à respecter l'ensemble des dispositions du Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) ainsi que la loi française Informatique et Libertés (Loi n° 78-17 du 6 janvier 1978 modifiée).</p>
+    </div>
+  </div>
+
+  <!-- S2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <div class="section-title">Ce que nous ne collectons JAMAIS</div>
+    </div>
+    <div class="section-body">
+      <p>Les données suivantes ne sont <strong>jamais collectées, jamais transmises, jamais stockées</strong> dans nos systèmes, quelles que soient les circonstances :</p>
+
+      <div class="row-no"><span class="icon">✗</span><span>Ton nom, prénom ou toute identité civile</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Ton adresse email dans les analytics (uniquement utilisée pour ton compte Firebase Auth, jamais dans les données comportementales)</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Ta localisation GPS ou toute donnée de géolocalisation</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Les photos de tes produits alimentaires (stockées uniquement en local sur ton appareil, jamais envoyées vers nos serveurs)</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Ton identifiant Firebase UID dans les analytics</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>La date exacte de tes actions (uniquement le mois, la saison, et le jour de la semaine)</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Tes données de paiement ou bancaires</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Tes contacts, accès à ta galerie photo, ou toute autre permission non nécessaire</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Le nom exact du produit alimentaire dans les analytics (uniquement via l'EAN et les données Open Food Facts)</span></div>
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <div class="section-title">Données collectées</div>
+    </div>
+    <div class="section-body">
+
+      <h3>A. Données de compte (Firebase Auth)</h3>
+      <p>Uniquement si tu crées un compte :</p>
+      <div class="row-yes"><span class="icon">✓</span><span>Adresse email — pour l'authentification uniquement</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Mot de passe — stocké sous forme hashée par Firebase, jamais accessible en clair</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Date de création du compte — pour la gestion de session</span></div>
+
+      <h3>B. Données analytiques anonymisées (avec consentement uniquement)</h3>
+      <p>Ces données ne sont collectées <strong>que si tu actives explicitement la contribution anonyme</strong> dans ton profil. Elles sont strictement anonymes :</p>
+      <div class="row-yes"><span class="icon">✓</span><span>Catégorie de l'aliment (ex : Laitiers, Viandes & Poissons, Fruits & Légumes)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Action effectuée : consommé / jeté / périmé</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>CO₂ associé à l'action (en kg, calculé via Agribalyse)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Code EAN du produit scanné (données produit issues d'Open Food Facts)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Nutriscore, Ecoscore, score NOVA (si disponibles sur Open Food Facts)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Mois et année de l'action (jamais la date exacte)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Jour de la semaine (1 à 7, jamais la date exacte)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Saison (printemps / été / automne / hiver)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Créneau repas approximatif (petit-déjeuner / déjeuner / goûter / dîner / nuit)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Taille du foyer (optionnel — seul / couple / famille / grande famille)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Plateforme (iOS ou Android)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Identifiant anonyme rotatif (UUID v4) — voir Section 4</span></div>
+
+      <h3>C. Données de synchronisation (Firestore — compte uniquement)</h3>
+      <p>Si tu as un compte, le contenu de ton frigo et tes statistiques sont synchronisés dans Firestore sous ton UID Firebase pour permettre la sauvegarde multi-appareils. Ces données restent privées et ne sont jamais croisées avec les analytics.</p>
+    </div>
+  </div>
+
+  <!-- S4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-number">04</div>
+      <div class="section-title">Anonymisation technique</div>
+    </div>
+    <div class="section-body">
+      <p>L'anonymisation dans GasPi-Check n'est pas une promesse marketing — c'est une contrainte technique architecturale :</p>
+
+      <div class="callout">
+        Un identifiant aléatoire (UUID v4) est généré localement sur ton appareil. Il n'est jamais relié à ton email, à ton UID Firebase, ni à ton nom. Il change automatiquement toutes les <strong>4 semaines</strong>, rendant tout suivi longitudinal techniquement impossible même pour nous.
+      </div>
+
+      <h3>Garanties techniques</h3>
+      <div class="row-yes"><span class="icon">✓</span><span>L'anonymousId est généré par <code>uuid.v4()</code> — entropie cryptographique, non prédictible</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Rotation automatique toutes les 4 semaines — aucun historique personnel traçable dans le temps</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Aucune jointure possible entre les tables <code>analytics/</code> et <code>users/</code> dans Firestore</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Les photos restent exclusivement en local (AsyncStorage) — jamais envoyées vers Firestore</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>La date exacte n'est jamais stockée — uniquement mois, saison, jour de semaine</span></div>
+
+      <div class="mono-block">
+Structure Firestore analytics :
+analytics/{anonymousId}/events/{eventId}
+→ Aucun champ permettant d'identifier l'auteur de l'événement
+→ anonymousId ≠ UID Firebase ≠ email
+→ Rotation toutes les 4 semaines
+      </div>
+    </div>
+  </div>
+
+  <!-- S5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-number">05</div>
+      <div class="section-title">Base légale du traitement</div>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th>Traitement</th>
+          <th>Base légale (Art. 6 RGPD)</th>
+        </tr>
+        <tr>
+          <td>Authentification (email/mot de passe)</td>
+          <td>Exécution du contrat — Art. 6.1.b</td>
+        </tr>
+        <tr>
+          <td>Synchronisation du frigo (Firestore)</td>
+          <td>Exécution du contrat — Art. 6.1.b</td>
+        </tr>
+        <tr>
+          <td>Analytics comportementaux anonymisés</td>
+          <td>Consentement explicite — Art. 6.1.a</td>
+        </tr>
+        <tr>
+          <td>Données produits EAN (Open Food Facts)</td>
+          <td>Intérêt légitime — Art. 6.1.f (données non personnelles)</td>
+        </tr>
+        <tr>
+          <td>Frigo familial partagé</td>
+          <td>Exécution du contrat — Art. 6.1.b</td>
+        </tr>
+      </table>
+
+      <p>Les données EAN (codes barres produits) ne constituent pas des données personnelles au sens du RGPD et peuvent être collectées sans consentement supplémentaire, conformément aux avis de la CNIL et au considérant 26 du RGPD.</p>
+    </div>
+  </div>
+
+  <!-- S6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-number">06</div>
+      <div class="section-title">Finalités du traitement</div>
+    </div>
+    <div class="section-body">
+      <p>Les données collectées sont utilisées exclusivement aux fins suivantes :</p>
+      <div class="row-yes"><span class="icon">✓</span><span>Fournir le service de suivi alimentaire et de gamification (fonctionnement de l'app)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Permettre la synchronisation multi-appareils et la sauvegarde de ta progression</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Mesurer l'impact collectif du gaspillage alimentaire en France (analytics anonymes)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Alimenter l'écran "Impact Global" avec des statistiques communautaires en temps réel</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Produire des rapports agrégés anonymes sur le gaspillage alimentaire (recherche environnementale)</span></div>
+
+      <div class="callout">
+        Les données anonymisées agrégées peuvent être partagées avec des organismes publics (ADEME, WWF) ou des partenaires de recherche dans le cadre de la lutte contre le gaspillage alimentaire. Ces partages concernent exclusivement des statistiques agrégées — jamais des données individuelles, même anonymisées.
+      </div>
+    </div>
+  </div>
+
+  <!-- S7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-number">07</div>
+      <div class="section-title">Durée de conservation</div>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th>Données</th>
+          <th>Durée de conservation</th>
+        </tr>
+        <tr>
+          <td>Données de compte (email, auth)</td>
+          <td>Jusqu'à la suppression du compte + 30 jours</td>
+        </tr>
+        <tr>
+          <td>Contenu du frigo (Firestore)</td>
+          <td>Jusqu'à la suppression du compte</td>
+        </tr>
+        <tr>
+          <td>Statistiques personnelles</td>
+          <td>Jusqu'à la suppression du compte</td>
+        </tr>
+        <tr>
+          <td>Événements analytics anonymisés</td>
+          <td>24 mois glissants</td>
+        </tr>
+        <tr>
+          <td>Index produits agrégés (products/ean)</td>
+          <td>Indéfinie (données non personnelles)</td>
+        </tr>
+        <tr>
+          <td>Données locales (AsyncStorage)</td>
+          <td>Jusqu'à désinstallation de l'app ou Kill-Switch</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- S8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-number">08</div>
+      <div class="section-title">Transferts hors Union Européenne</div>
+    </div>
+    <div class="section-body">
+      <p>GasPi-Check utilise <strong>Firebase (Google LLC)</strong> pour l'authentification et la base de données. Firebase est un service de Google dont les serveurs peuvent être situés hors de l'Union Européenne, notamment aux États-Unis.</p>
+
+      <p>Ce transfert est encadré par :</p>
+      <div class="row-yes"><span class="icon">✓</span><span>Les <strong>Clauses Contractuelles Types (CCT)</strong> de la Commission Européenne, adoptées par Google pour tous ses services Firebase</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Le <strong>Data Privacy Framework EU-US</strong> (décision d'adéquation de la Commission européenne du 10 juillet 2023)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Les <strong>Conditions d'utilisation de Firebase</strong> incluant les engagements RGPD de Google Cloud</span></div>
+
+      <p>Pour plus d'informations sur les pratiques de confidentialité de Google Firebase : <strong>firebase.google.com/support/privacy</strong></p>
+    </div>
+  </div>
+
+  <!-- S9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-number">09</div>
+      <div class="section-title">Tes droits</div>
+    </div>
+    <div class="section-body">
+      <p>Conformément au RGPD (Articles 15 à 22), tu disposes des droits suivants sur tes données personnelles :</p>
+
+      <div class="rights-grid">
+        <div class="right-card">
+          <div class="right-title">🔍 Droit d'accès</div>
+          <p>Obtenir une copie de toutes tes données personnelles détenues par GasPi-Check.</p>
+        </div>
+        <div class="right-card">
+          <div class="right-title">✏️ Droit de rectification</div>
+          <p>Corriger des données inexactes ou incomplètes te concernant.</p>
+        </div>
+        <div class="right-card">
+          <div class="right-title">🗑️ Droit à l'effacement</div>
+          <p>Supprimer toutes tes données. Disponible via le <strong>Kill-Switch</strong> dans l'app (suppression immédiate cloud + local).</p>
+        </div>
+        <div class="right-card">
+          <div class="right-title">⏸️ Droit à la limitation</div>
+          <p>Limiter le traitement de tes données dans certaines circonstances.</p>
+        </div>
+        <div class="right-card">
+          <div class="right-title">📦 Droit à la portabilité</div>
+          <p>Recevoir tes données dans un format structuré et lisible par machine.</p>
+        </div>
+        <div class="right-card">
+          <div class="right-title">🚫 Droit d'opposition</div>
+          <p>Retirer ton consentement aux analytics anonymes à tout moment depuis ton Profil.</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 16px;">
+        Le <strong>Kill-Switch</strong> disponible dans les paramètres de l'app exerce simultanément ton droit à l'effacement complet : suppression de toutes les données Firestore + vidage AsyncStorage local + déconnexion. Exécution immédiate, sans délai.
+      </div>
+
+      <p>Pour exercer un droit non couvrable via l'app, contacte le responsable de traitement via le dépôt GitHub. Réponse dans un délai maximum de <strong>30 jours</strong> conformément à l'Article 12 RGPD.</p>
+      <p>Tu as également le droit d'introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés) : <strong>cnil.fr</strong></p>
+    </div>
+  </div>
+
+  <!-- S10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-number">10</div>
+      <div class="section-title">Cookies et tracking</div>
+    </div>
+    <div class="section-body">
+      <div class="row-no"><span class="icon">✗</span><span>GasPi-Check n'utilise aucun cookie de tracking ou publicitaire</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Aucune régie publicitaire n'a accès à tes données</span></div>
+      <div class="row-no"><span class="icon">✗</span><span>Aucun SDK de tracking tiers (Facebook Pixel, Google Analytics, etc.)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Firebase Auth utilise des tokens de session sécurisés — nécessaires au fonctionnement du compte uniquement</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>AsyncStorage est utilisé comme cache local — données restent sur ton appareil</span></div>
+    </div>
+  </div>
+
+  <!-- S11 -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <div class="section-number">11</div>
+      <div class="section-title">Sécurité des données</div>
+    </div>
+    <div class="section-body">
+      <div class="row-yes"><span class="icon">✓</span><span>Authentification sécurisée via Firebase Auth (mots de passe hashés, jamais stockés en clair)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Règles de sécurité Firestore en production — lecture/écriture conditionnée à l'authentification</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Transit des données chiffré via HTTPS/TLS</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Index produits analytics — lecture bloquée côté client (<code>allow read: if false</code>)</span></div>
+      <div class="row-yes"><span class="icon">✓</span><span>Architecture Local First — données sensibles prioritairement stockées sur ton appareil</span></div>
+    </div>
+  </div>
+
+  <!-- S12 -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <div class="section-number">12</div>
+      <div class="section-title">Modifications de cette politique</div>
+    </div>
+    <div class="section-body">
+      <p>Cette politique de confidentialité peut être mise à jour pour refléter des évolutions de l'application ou des exigences légales. En cas de modification substantielle, tu seras informé via une notification dans l'application.</p>
+      <p>La date de dernière mise à jour est indiquée en haut de ce document. La version en vigueur est toujours accessible via ce lien permanent.</p>
+      <p>La poursuite de l'utilisation de GasPi-Check après notification d'une modification vaut acceptation de la nouvelle version.</p>
+    </div>
+  </div>
+
+  <div class="contact-box">
+    <h3>📬 Contact — Exercice de tes droits</h3>
+    <p>Pour toute question relative à tes données personnelles ou pour exercer tes droits RGPD, contacte le responsable de traitement via le dépôt GitHub associé à l'application.</p>
+    <a href="https://github.com/Darkden64" class="contact-email">github.com/Darkden64</a>
+  </div>
+
+  <div class="footer">
+    <strong>GasPi-Check</strong> · Politique de confidentialité V9.5 · Entrée en vigueur le 29 avril 2026<br>
+    Conforme au Règlement UE 2016/679 (RGPD) · Loi Informatique et Libertés n°78-17<br><br>
+    © 2026 Darkden64. Tous droits réservés.
+  </div>
+
+</div>
+</body>
+</html>

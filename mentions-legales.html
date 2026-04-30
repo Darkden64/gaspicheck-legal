@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentions Légales — GasPi-Check</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --dark: #1a1a2e;
+    --green: #4CAF50;
+    --green-light: #e8f5e9;
+    --text: #1a1a1a;
+    --text2: #555;
+    --text3: #999;
+    --bg: #f7f7f5;
+    --white: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --font: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  .hero {
+    background: var(--dark);
+    padding: 60px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(76,175,80,0.12) 0%, transparent 70%);
+  }
+  .hero h1 {
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .hero h1 span { color: var(--green); }
+  .hero p {
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    position: relative;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .section-header {
+    background: var(--dark);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .section-body {
+    padding: 24px;
+  }
+
+  p { font-size: 15px; color: var(--text2); margin-bottom: 12px; line-height: 1.75; }
+  p:last-child { margin-bottom: 0; }
+
+  .mono-block {
+    background: #f0f0ef;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text);
+    margin: 12px 0;
+    line-height: 2;
+  }
+
+  .callout {
+    background: var(--green-light);
+    border-left: 3px solid var(--green);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+    color: #1b5e20;
+    line-height: 1.7;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 8px 0;
+  }
+  th {
+    background: #f0f0ef;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text3);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+    font-size: 14px;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text3);
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>Mentions <span>Légales</span></h1>
+  <p>GasPi-Check · Version 9.5 · En vigueur depuis le 29 avril 2026</p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Éditeur de l'application</div>
+    </div>
+    <div class="section-body">
+      <div class="mono-block">
+Nom : Darkden64
+Qualité : Développeur indépendant — Auteur et éditeur de l'application
+Application : GasPi-Check (mobile — Android / iOS)
+Dépôt public : github.com/Darkden64/GasPi-Check-Showcase
+Contact : via le dépôt GitHub
+Pays : France
+      </div>
+      <p>GasPi-Check est une œuvre de l'esprit au sens de l'Article L111-1 du Code de la Propriété Intellectuelle français. Son auteur est Darkden64, qui en détient l'intégralité des droits patrimoniaux et moraux.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Hébergement</div>
+    </div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th>Service</th>
+          <th>Prestataire</th>
+          <th>Adresse</th>
+        </tr>
+        <tr>
+          <td>Base de données & Auth</td>
+          <td>Google LLC — Firebase</td>
+          <td>1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</td>
+        </tr>
+        <tr>
+          <td>Dépôt de code (Showcase)</td>
+          <td>GitHub Inc.</td>
+          <td>88 Colin P Kelly Jr St, San Francisco, CA 94107, USA</td>
+        </tr>
+        <tr>
+          <td>Distribution Android</td>
+          <td>Google LLC — Google Play</td>
+          <td>1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</td>
+        </tr>
+        <tr>
+          <td>Distribution iOS</td>
+          <td>Apple Inc.</td>
+          <td>One Apple Park Way, Cupertino, CA 95014, USA</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Propriété intellectuelle</div>
+    </div>
+    <div class="section-body">
+      <p>L'ensemble des éléments constituant l'application GasPi-Check — code source, algorithmes, interfaces graphiques, systèmes de gamification, pipeline analytique, architecture technique, documentation, et tous les noms associés ("GasPi-Check", "Zen-Eco", "Frigo Familial") — sont la propriété exclusive de Darkden64.</p>
+
+      <p>Ces éléments sont protégés par :</p>
+      <div class="mono-block">
+— Code de la Propriété Intellectuelle (CPI) français
+— Directive EU 2009/24/CE sur la protection des logiciels
+— Convention de Berne (179 pays signataires)
+— Accord ADPIC / TRIPS (Organisation Mondiale du Commerce)
+— Traité de l'OMPI sur le droit d'auteur (WCT)
+      </div>
+
+      <div class="callout">
+        Toute reproduction, représentation, modification, distribution ou exploitation de tout ou partie de l'application, sans autorisation écrite préalable de l'auteur, constitue une contrefaçon sanctionnée par les Articles L335-2 et suivants du CPI (jusqu'à 3 ans d'emprisonnement et 300 000 € d'amende).
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Données personnelles</div>
+    </div>
+    <div class="section-body">
+      <p>Le traitement des données personnelles effectué dans le cadre de l'utilisation de GasPi-Check est détaillé dans la <strong>Politique de Confidentialité</strong> de l'application, disponible depuis les paramètres de l'app et sur le dépôt GitHub.</p>
+
+      <p>Conformément au RGPD (Règlement UE 2016/679) et à la Loi Informatique et Libertés (n° 78-17 du 6 janvier 1978 modifiée), vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, de portabilité et d'opposition sur vos données personnelles.</p>
+
+      <p>Pour exercer ces droits : contact via le dépôt GitHub — réponse sous 30 jours maximum.</p>
+
+      <p>En cas de litige non résolu, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> : cnil.fr</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Composants tiers et licences open source</div>
+    </div>
+    <div class="section-body">
+      <p>GasPi-Check intègre des composants open source dont les licences respectives sont respectées. Les principaux composants tiers utilisés sont :</p>
+      <table>
+        <tr>
+          <th>Composant</th>
+          <th>Licence</th>
+          <th>Usage</th>
+        </tr>
+        <tr>
+          <td>React Native</td>
+          <td>MIT</td>
+          <td>Framework mobile</td>
+        </tr>
+        <tr>
+          <td>Expo</td>
+          <td>MIT</td>
+          <td>Environnement de développement</td>
+        </tr>
+        <tr>
+          <td>Firebase SDK</td>
+          <td>Apache 2.0</td>
+          <td>Auth & base de données</td>
+        </tr>
+        <tr>
+          <td>Open Food Facts API</td>
+          <td>ODbL (données ouvertes)</td>
+          <td>Données produits alimentaires</td>
+        </tr>
+        <tr>
+          <td>React Navigation</td>
+          <td>MIT</td>
+          <td>Navigation dans l'app</td>
+        </tr>
+      </table>
+      <p>L'intégration de ces composants open source ne modifie pas le caractère propriétaire du code original de GasPi-Check.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Responsabilité</div>
+    </div>
+    <div class="section-body">
+      <p>GasPi-Check est fourni en l'état, à titre informatif et d'aide à la gestion alimentaire personnelle. Les calculs de CO₂ sont des estimations basées sur les données Agribalyse et Open Food Facts — ils ne constituent pas des mesures certifiées.</p>
+      <p>L'éditeur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation de l'application, d'une indisponibilité du service, ou d'une perte de données.</p>
+      <p>L'utilisateur est seul responsable de l'utilisation qu'il fait de l'application et des informations qu'il y saisit.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Droit applicable et juridiction</div>
+    </div>
+    <div class="section-body">
+      <p>Les présentes mentions légales sont régies par le droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux compétents de <strong>Paris (France)</strong> seront seuls compétents.</p>
+      <p>Pour les utilisateurs résidant dans un autre État membre de l'Union Européenne, les dispositions impératives de protection du consommateur en vigueur dans leur pays de résidence restent applicables.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>GasPi-Check</strong> · Mentions Légales · Version 9.5 · 29 avril 2026<br>
+    © 2026 Darkden64. Tous droits réservés.
+  </div>
+
+</div>
+</body>
+</html>
